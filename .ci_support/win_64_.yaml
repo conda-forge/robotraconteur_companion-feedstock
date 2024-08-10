@@ -10,5 +10,7 @@ cxx_compiler:
 - vs2019
 libboost_devel:
 - '1.84'
+libopencv:
+- 4.10.0
 target_platform:
 - win-64

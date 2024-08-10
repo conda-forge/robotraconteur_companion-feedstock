@@ -13,9 +13,9 @@ source:
     folder: robdef
 
 build:
-  number: 0
+  number: 1
   run_exports:
-    - {{ pin_subpackage(name, min_pin='x.x', max_pin='x.x') }}
+    - {{ pin_subpackage(name, min_pin='x.x') }}
 
 requirements:
   build:
