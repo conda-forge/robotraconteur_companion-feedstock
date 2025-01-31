@@ -22,7 +22,7 @@ requirements:
     - git
     - cmake
     - ninja  # [win]
-    - make  # [linux]
+    - make  # [unix]
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
