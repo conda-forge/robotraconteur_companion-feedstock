@@ -13,7 +13,7 @@ source:
     folder: robdef
 
 build:
-  number: 2
+  number: 3
   run_exports:
     - {{ pin_subpackage(name, min_pin='x.x') }}
 
@@ -22,7 +22,7 @@ requirements:
     - git
     - cmake
     - ninja  # [win]
-    - make  # [linux]
+    - make  # [unix]
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
