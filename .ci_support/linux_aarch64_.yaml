@@ -21,7 +21,7 @@ docker_image:
 libboost_devel:
 - '1.86'
 libopencv:
-- 4.11.0
+- 4.12.0
 openssl:
 - '3'
 target_platform:

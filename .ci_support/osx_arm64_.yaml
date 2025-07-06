@@ -21,7 +21,7 @@ cxx_compiler_version:
 libboost_devel:
 - '1.86'
 libopencv:
-- 4.11.0
+- 4.12.0
 macos_machine:
 - arm64-apple-darwin20.0.0
 openssl:
