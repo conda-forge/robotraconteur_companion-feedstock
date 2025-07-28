@@ -76,7 +76,7 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-robotraconteur_companion-green.svg)](https://anaconda.org/conda-forge/robotraconteur_companion) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/robotraconteur_companion.svg)](https://anaconda.org/conda-forge/robotraconteur_companion) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/robotraconteur_companion.svg)](https://anaconda.org/conda-forge/robotraconteur_companion) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/robotraconteur_companion.svg)](https://anaconda.org/conda-forge/robotraconteur_companion) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-robotraconteur__companion-green.svg)](https://anaconda.org/conda-forge/robotraconteur_companion) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/robotraconteur_companion.svg)](https://anaconda.org/conda-forge/robotraconteur_companion) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/robotraconteur_companion.svg)](https://anaconda.org/conda-forge/robotraconteur_companion) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/robotraconteur_companion.svg)](https://anaconda.org/conda-forge/robotraconteur_companion) |
 
 Installing robotraconteur_companion
 ===================================
