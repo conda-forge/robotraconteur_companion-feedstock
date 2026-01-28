@@ -11,6 +11,6 @@ cxx_compiler:
 libboost_devel:
 - '1.88'
 libopencv:
-- 4.12.0
+- 4.13.0
 target_platform:
 - win-64
