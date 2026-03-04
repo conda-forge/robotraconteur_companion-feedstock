@@ -1,0 +1,112 @@
+From ba858c63b8e8342a37ae134c9607a57cb4729e4a Mon Sep 17 00:00:00 2001
+From: John Wason <wason@wasontech.com>
+Date: Sat, 31 Jan 2026 16:28:57 -0500
+Subject: [PATCH 1/4] find_package(Eigen3) add support for Eigen up to v5
+
+---
+ CMakeLists.txt | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 531f4c5..6bcc90f 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -14,6 +14,9 @@ endif()
+ find_package(RobotRaconteur 0.17.0 REQUIRED)
+ find_package(yaml-cpp REQUIRED)
+ find_package(Eigen3 3.3 REQUIRED NO_MODULE)
++if(NOT Eigen3_FOUND)
++    find_package(Eigen3 3.3..5 REQUIRED NO_MODULE)
++endif()
+ find_package(OpenCV)
+ 
+ if(NOT IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/robdef/group1")
+
+From 29bd01c32f9fcbc433dd7fdde3cf96a2a3df7d78 Mon Sep 17 00:00:00 2001
+From: John Wason <wason@wasontech.com>
+Date: Sat, 31 Jan 2026 18:46:12 -0500
+Subject: [PATCH 2/4] Add C to cmake languages
+
+---
+ CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 6bcc90f..f08ab8e 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -3,7 +3,7 @@ if((CMAKE_VERSION VERSION_GREATER 3.12 OR CMAKE_VERSION VERSION_EQUAL 3.12))
+ else()
+     cmake_minimum_required(VERSION 3.5)
+ endif()
+-project(RobotRaconteurCompanion VERSION 0.4.2 LANGUAGES CXX)
++project(RobotRaconteurCompanion VERSION 0.4.2 LANGUAGES CXX C)
+ 
+ set(CMAKE_CXX_STANDARD 11)
+ 
+
+From 70c8cbe1acc91273fc2efaf6473eb7f478f2adad Mon Sep 17 00:00:00 2001
+From: John Wason <wason@wasontech.com>
+Date: Sat, 31 Jan 2026 20:53:04 -0500
+Subject: [PATCH 3/4] find_package(Eigen3) add support for Eigen up to v5
+
+---
+ CMakeLists.txt | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index f08ab8e..4481f45 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -13,9 +13,9 @@ endif()
+ 
+ find_package(RobotRaconteur 0.17.0 REQUIRED)
+ find_package(yaml-cpp REQUIRED)
+-find_package(Eigen3 3.3 REQUIRED NO_MODULE)
++find_package(Eigen3 3.3 NO_MODULE)
+ if(NOT Eigen3_FOUND)
+-    find_package(Eigen3 3.3..5 REQUIRED NO_MODULE)
++    find_package(Eigen3 3.3...5 REQUIRED NO_MODULE)
+ endif()
+ find_package(OpenCV)
+ 
+
+From cdbf804767cfe6e540d8c99adfc794c205bab5dd Mon Sep 17 00:00:00 2001
+From: John Wason <wason@wasontech.com>
+Date: Sat, 31 Jan 2026 22:26:49 -0500
+Subject: [PATCH 4/4] find_package(Eigen3) add support for Eigen up to v5
+
+---
+ CMakeLists.txt      | 4 ++--
+ test/CMakeLists.txt | 2 +-
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 4481f45..4a064c1 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -13,9 +13,9 @@ endif()
+ 
+ find_package(RobotRaconteur 0.17.0 REQUIRED)
+ find_package(yaml-cpp REQUIRED)
+-find_package(Eigen3 3.3 NO_MODULE)
++find_package(Eigen3 3.3 NO_MODULE QUIET)
+ if(NOT Eigen3_FOUND)
+-    find_package(Eigen3 3.3...5 REQUIRED NO_MODULE)
++    find_package(Eigen3 3.3...<6 REQUIRED NO_MODULE)
+ endif()
+ find_package(OpenCV)
+ 
+diff --git a/test/CMakeLists.txt b/test/CMakeLists.txt
+index 82f1610..077dc2a 100644
+--- a/test/CMakeLists.txt
++++ b/test/CMakeLists.txt
+@@ -25,7 +25,7 @@ endif()
+ add_executable(test_robotinfo_parser test_robotinfo_parser.cpp)
+ target_link_libraries(test_robotinfo_parser RobotRaconteurCompanion RobotRaconteurCore yaml-cpp)
+ 
+-find_package(Eigen3 3.3 REQUIRED NO_MODULE)
++# find_package(Eigen3 3.3 REQUIRED NO_MODULE)
+ add_executable(test_eigen_converters test_eigen_converters.cpp)
+ target_link_libraries(test_eigen_converters RobotRaconteurCompanion RobotRaconteurCore Eigen3::Eigen GTest::Main)
+ 
