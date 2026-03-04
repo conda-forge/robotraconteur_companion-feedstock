@@ -13,7 +13,7 @@ source:
     folder: robdef
 
 build:
-  number: 2
+  number: 3
   run_exports:
     - {{ pin_subpackage(name, min_pin='x.x.x') }}
 
@@ -31,7 +31,7 @@ requirements:
     - librobotraconteur
     - libboost-devel
     - yaml-cpp
-    - eigen
+    - eigen-abi-devel
     - openssl  # [unix]
     - libopencv
 
