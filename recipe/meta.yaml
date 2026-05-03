@@ -16,7 +16,7 @@ source:
     folder: robdef
 
 build:
-  number: 5
+  number: 6
   run_exports:
     - {{ pin_subpackage(name, min_pin='x.x.x') }}
 
