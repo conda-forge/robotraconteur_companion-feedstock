@@ -1,5 +1,5 @@
 {% set name = "robotraconteur_companion" %}
-{% set version = "0.4.2" %}
+{% set version = "0.4.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   - url: https://github.com/robotraconteur/robotraconteur_companion/archive/v{{ version }}.tar.gz
-    sha256: 19878ca791ec44f14ed82829ec2aca0c6f191874b4a80eb31608b7320274845a
+    sha256: a5d1a7e08ef6edb2c009263fe313f984a08b765bb75e9155a47a4bb815d244f0
     patches:
       - 60.patch
       - 62.patch
@@ -16,7 +16,7 @@ source:
     folder: robdef
 
 build:
-  number: 6
+  number: 0
   run_exports:
     - {{ pin_subpackage(name, min_pin='x.x.x') }}
 
