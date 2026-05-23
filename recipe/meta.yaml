@@ -8,9 +8,6 @@ package:
 source:
   - url: https://github.com/robotraconteur/robotraconteur_companion/archive/v{{ version }}.tar.gz
     sha256: a5d1a7e08ef6edb2c009263fe313f984a08b765bb75e9155a47a4bb815d244f0
-    patches:
-      - 60.patch
-      - 62.patch
   - url: https://github.com/robotraconteur/robotraconteur_standard_robdef/archive/refs/tags/group1-v1.tar.gz
     sha256: aad4f122b1240756564d6f3d16258e3fd07febad9e0ceda489c5e32290e64707
     folder: robdef
