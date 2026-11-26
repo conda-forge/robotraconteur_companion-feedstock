@@ -13,7 +13,7 @@ source:
     folder: robdef
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage(name, min_pin='x.x.x') }}
 
@@ -26,9 +26,9 @@ requirements:
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
-    - librobotraconteur                      # [build_platform != target_platform]
+    - librobotraconteur >=1.3.0              # [build_platform != target_platform]
   host:
-    - librobotraconteur
+    - librobotraconteur >=1.3.0
     - libboost-devel
     - yaml-cpp
     - eigen-abi-devel
